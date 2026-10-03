@@ -1,0 +1,332 @@
+/* =========================
+   BINANCE-INSPIRED DARK UI
+   ========================= */
+
+:root {
+  --bg: #0b0e11;
+  --panel: #181a20;
+  --panel-hover: #1e2329;
+  --border: #2b2f36;
+  --text: #eaecef;
+  --muted: #848e9c;
+  --yellow: #f0b90b;
+  --green: #0ecb81;
+  --red: #f6465d;
+}
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* Main App container
+   Works with your existing App.jsx */
+
+body > #root > div {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 30px 24px !important;
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN TITLE
+   ========================= */
+
+h1 {
+  color: var(--yellow);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 30px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 28px 0 16px;
+}
+
+/* =========================
+   PORTFOLIO
+   ========================= */
+
+/* Portfolio's first container */
+body > #root > div > div:first-of-type {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+/* Portfolio heading */
+body > #root > div > div:first-of-type h2 {
+  margin-top: 0;
+  color: var(--text);
+}
+
+/* Portfolio text */
+body > #root > div > div:first-of-type p {
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+/* =========================
+   MARKET SECTION
+   ========================= */
+
+body > #root > div > h2 {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* =========================
+   COIN LIST
+   ========================= */
+
+body > #root > div > div:nth-of-type(2) {
+  background: var(--panel);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* Coin rows */
+
+body > #root > div > div:nth-of-type(2) > div {
+  min-height: 64px;
+  padding: 14px 20px !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text);
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+/* Last row */
+
+body > #root > div > div:nth-of-type(2) > div:last-child {
+  border-bottom: none !important;
+}
+
+/* Hover */
+
+body > #root > div > div:nth-of-type(2) > div:hover {
+  background: var(--panel-hover) !important;
+}
+
+/* Coin logo */
+
+body > #root > div > div:nth-of-type(2) img {
+  border-radius: 50%;
+}
+
+/* Coin symbol */
+
+body > #root > div > div:nth-of-type(2) b {
+  color: var(--text);
+  font-size: 15px;
+  min-width: 42px;
+}
+
+/* Price */
+
+body > #root > div > div:nth-of-type(2) > div > div:last-child {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* =========================
+   GREEN / RED PRICE CHANGE
+   ========================= */
+
+[style*="lightgreen"] {
+  color: var(--green) !important;
+  font-weight: 500;
+}
+
+[style*="red"] {
+  color: var(--red) !important;
+  font-weight: 500;
+}
+
+/* =========================
+   TRADE MODAL
+   ========================= */
+
+/* Dark overlay */
+
+body > #root > div > div[style*="position: fixed"] {
+  background: rgba(0, 0, 0, 0.78) !important;
+  backdrop-filter: blur(3px);
+}
+
+/* Modal box */
+
+body > #root > div > div[style*="position: fixed"] > div {
+  background: #181a20 !important;
+  border: 1px solid var(--border);
+  border-radius: 10px !important;
+  width: 430px !important;
+  max-width: calc(100vw - 30px);
+  padding: 24px !important;
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* Modal title */
+
+body > #root > div > div[style*="position: fixed"] h2 {
+  color: var(--text);
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+/* Modal paragraphs */
+
+body > #root > div > div[style*="position: fixed"] p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   CHART
+   ========================= */
+
+body > #root > div > div[style*="position: fixed"] svg {
+  overflow: visible;
+}
+
+/* =========================
+   AMOUNT INPUT
+   ========================= */
+
+body > #root > div > div[style*="position: fixed"] input {
+  background: #0b0e11 !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  outline: none;
+  font-size: 16px;
+  height: 44px;
+}
+
+body > #root > div > div[style*="position: fixed"] input:focus {
+  border-color: var(--yellow) !important;
+  box-shadow: 0 0 0 1px var(--yellow);
+}
+
+/* Remove number input arrows */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0;
+}
+
+/* =========================
+   BUY / SELL BUTTONS
+   ========================= */
+
+body > #root > div > div[style*="position: fixed"] button {
+  font-weight: 600;
+  font-size: 14px;
+  transition:
+    opacity 0.15s ease,
+    transform 0.1s ease;
+}
+
+/* BUY */
+
+body > #root > div > div[style*="position: fixed"] button[style*="green"] {
+  background: var(--green) !important;
+  color: #fff !important;
+}
+
+/* SELL */
+
+body > #root > div > div[style*="position: fixed"] button[style*="red"] {
+  background: var(--red) !important;
+  color: #fff !important;
+}
+
+/* Hover */
+
+body > #root > div > div[style*="position: fixed"] button:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   CLOSE BUTTON
+   ========================= */
+
+body > #root > div > div[style*="position: fixed"] button:last-child {
+  background: #2b2f36 !important;
+  color: var(--text) !important;
+  border: 1px solid #3a3f47 !important;
+  border-radius: 6px;
+}
+
+body > #root > div > div[style*="position: fixed"] button:last-child:hover {
+  background: #363b44 !important;
+}
+
+/* =========================
+   LOADING TEXT
+   ========================= */
+
+body > #root > div p {
+  color: var(--muted);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+  body > #root > div {
+    padding: 20px 12px !important;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  body > #root > div > div:nth-of-type(2) > div {
+    padding: 12px !important;
+    min-height: 58px;
+  }
+
+  body > #root > div > div:nth-of-type(2) img {
+    width: 26px;
+    height: 26px;
+  }
+
+  body > #root > div > div:nth-of-type(2) > div > div:last-child {
+    font-size: 12px;
+  }
+
+  body > #root > div > div[style*="position: fixed"] > div {
+    width: calc(100vw - 24px) !important;
+    padding: 18px !important;
+  }
+}
