@@ -330,3 +330,102 @@ body > #root > div p {
     padding: 18px !important;
   }
 }
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+.tabs button {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: #222;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.tabs button.active {
+  background: white;
+  color: black;
+}
+
+.auth-screen {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.auth-card {
+  display: flex;
+  width: min(100%, 400px);
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.auth-card h1,
+.auth-card h2,
+.auth-card p {
+  margin: 0;
+}
+
+.auth-card h1 {
+  font-size: 24px;
+}
+
+.auth-card h2 {
+  margin-top: 8px;
+}
+
+.auth-card label {
+  color: var(--muted);
+}
+
+.auth-card input {
+  padding: 12px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.auth-card button,
+.account-bar button {
+  padding: 10px 14px;
+  color: #0b0e11;
+  background: var(--yellow);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-card button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.auth-card .auth-mode-button {
+  color: var(--text);
+  background: transparent;
+}
+
+.auth-error {
+  color: var(--red) !important;
+}
+
+.auth-message {
+  color: var(--green) !important;
+}
+
+.account-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  color: var(--muted);
+}
